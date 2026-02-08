@@ -1,4 +1,4 @@
-def find_solutions():
+def find_solutions() -> None:
     """
     Find all solutions for ХОД + ХОД + ХОД = МАТ
     where different letters represent different digits.
@@ -26,15 +26,8 @@ def find_solutions():
 
     solutions.sort(key=lambda s: s[0])
 
-    return solutions
-
-
-if __name__ == "__main__":
-    solutions = find_solutions()
-
     print("Все решения:")
     print("=" * 30)
+
     for xod, mat in solutions:
         print(f"{xod}+{xod}+{xod}={mat}")
-
-    print(f"\nВсего найдено решений: {len(solutions)}")
