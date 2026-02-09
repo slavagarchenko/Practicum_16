@@ -8,9 +8,6 @@ def prime_less_number(number: int) -> bool:
     Returns:
         set: Set of prime numbers less than upper bound
     """
-    if number <= 2:
-        return set()
-
     primes_set = set(range(2, number))
 
     current = 2
@@ -36,17 +33,13 @@ def main():
 
         if number <= 0:
             print("Число должно быть натуральным (n > 0)!")
+
         elif number <= 2:
             print(f"Простых чисел меньше {number} не существует.")
+
         else:
             primes = prime_less_number(number)
-
-            if primes:
-                sorted_primes = sorted(primes)
-                print(f"Простые числа меньше {number}: {sorted_primes}")
-
-            else:
-                print("Простых чисел нет")
+            print(f"Простые числа меньше {number}: {primes}")
 
     except ValueError:
         print("Ошибка: введите целое натуральное число!")

@@ -12,7 +12,12 @@ def get_all_permutations(input_str: str) -> list:
 
     unique_numbers = sorted(set(numbers))
 
-    return list(permutations(unique_numbers))
+    subsets = []
+
+    for permutation in permutations(unique_numbers):
+        subsets.append(list(permutation))
+
+    return subsets
 
 
 def main():
@@ -24,7 +29,6 @@ def main():
         if not input_str:
             print("Ошибка: ввод не может быть пустым!")
 
-        print("=" * 50)
         print(get_all_permutations(input_str))
 
     except ValueError:

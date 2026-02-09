@@ -27,7 +27,6 @@ def find_solutions() -> None:
     solutions.sort(key=lambda s: s[0])
 
     print("Все решения:")
-    print("=" * 30)
 
     for xod, mat in solutions:
         print(f"{xod}+{xod}+{xod}={mat}")

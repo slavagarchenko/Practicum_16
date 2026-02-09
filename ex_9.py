@@ -15,7 +15,12 @@ def get_k_subsets(input_str: str, k: int) -> list:
     numbers = list(map(int, input_str.split()))
     unique_numbers = sorted(set(numbers))
 
-    return list(combinations(unique_numbers, k))
+    subsets = []
+
+    for combo in combinations(unique_numbers, k):
+        subsets.append(list(combo))
+
+    return subsets
 
 
 def main():

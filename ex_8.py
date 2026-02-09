@@ -19,7 +19,7 @@ def get_all_subsets(input_str: str) -> list:
 
     for r in range(len(unique_numbers) + 1):
         for combo in combinations(unique_numbers, r):
-            subsets.append(combo)
+            subsets.append(list(combo))
 
     return subsets
 
@@ -33,8 +33,8 @@ def main():
 
         if not input_str:
             print("Ошибка: ввод не может быть пустым!")
+
         else:
-            print("=" * 50)
             print(get_all_subsets(input_str))
 
     except ValueError:
