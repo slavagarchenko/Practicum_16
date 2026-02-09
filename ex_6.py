@@ -31,3 +31,7 @@ def find_solutions() -> None:
 
     for xod, mat in solutions:
         print(f"{xod}+{xod}+{xod}={mat}")
+
+
+if __name__ == "__main__":
+    find_solutions()

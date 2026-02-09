@@ -15,16 +15,24 @@ def get_all_permutations(input_str: str) -> list:
     return list(permutations(unique_numbers))
 
 
-try:
-    input_str = input("Введите натуральные числа через пробел: ").strip()
-    if not input_str:
-        print("Ошибка: ввод не может быть пустым!")
+def main():
+    """
+    Main function.
+    """
+    try:
+        input_str = input("Введите натуральные числа через пробел: ").strip()
+        if not input_str:
+            print("Ошибка: ввод не может быть пустым!")
 
-    print("=" * 50)
-    print(get_all_permutations(input_str))
+        print("=" * 50)
+        print(get_all_permutations(input_str))
 
-except ValueError:
-    print("Ошибка: все элементы должны быть натуральными числами!")
+    except ValueError:
+        print("Ошибка: все элементы должны быть натуральными числами!")
 
-except Exception as e:
-    print(f"Произошла ошибка: {e}")
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+
+
+if __name__ == "__main__":
+    main()

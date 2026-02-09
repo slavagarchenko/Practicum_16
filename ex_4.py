@@ -15,16 +15,26 @@ def number_in_two(first_set: set, second_set: set, number: int) -> bool:
     return number in intersection_set
 
 
-try:
-    numbers_str = input("Введите числа для первого множества через пробел: ")
-    first_set = set(map(int, numbers_str.split()))
+def main():
+    """
+    Main function.
+    """
+    try:
+        numbers_str = input(
+            "Введите числа для первого множества через пробел: ")
+        first_set = set(map(int, numbers_str.split()))
 
-    numbers_str = input("Введите числа для второго множества через пробел: ")
-    second_set = set(map(int, numbers_str.split()))
+        numbers_str = input(
+            "Введите числа для второго множества через пробел: ")
+        second_set = set(map(int, numbers_str.split()))
 
-    number = int(input("Введите число для проверки: "))
+        number = int(input("Введите число для проверки: "))
 
-    print(number_in_two(first_set, second_set, number))
+        print(number_in_two(first_set, second_set, number))
 
-except ValueError:
-    print("Ошибка ввода! Убедитесь, что введены корректные данные")
+    except ValueError:
+        print("Ошибка ввода! Убедитесь, что введены корректные данные")
+
+
+if __name__ == "__main__":
+    main()

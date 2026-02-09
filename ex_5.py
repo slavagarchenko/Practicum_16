@@ -27,22 +27,30 @@ def prime_less_number(number: int) -> bool:
     return primes_set
 
 
-try:
-    number = int(input("Введите натуральное число n: "))
+def main():
+    """
+    Main function.
+    """
+    try:
+        number = int(input("Введите натуральное число n: "))
 
-    if number <= 0:
-        print("Число должно быть натуральным (n > 0)!")
-    elif number <= 2:
-        print(f"Простых чисел меньше {number} не существует.")
-    else:
-        primes = prime_less_number(number)
-
-        if primes:
-            sorted_primes = sorted(primes)
-            print(f"Простые числа меньше {number}: ")
-
+        if number <= 0:
+            print("Число должно быть натуральным (n > 0)!")
+        elif number <= 2:
+            print(f"Простых чисел меньше {number} не существует.")
         else:
-            print("Простых чисел нет")
+            primes = prime_less_number(number)
 
-except ValueError:
-    print("Ошибка: введите целое натуральное число!")
+            if primes:
+                sorted_primes = sorted(primes)
+                print(f"Простые числа меньше {number}: {sorted_primes}")
+
+            else:
+                print("Простых чисел нет")
+
+    except ValueError:
+        print("Ошибка: введите целое натуральное число!")
+
+
+if __name__ == "__main__":
+    main()

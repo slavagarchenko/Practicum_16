@@ -1,4 +1,4 @@
-def different_favourites(set_favourites: set, friend_favourite: str) -> set:
+def different_favourites(set_favourites: set, friend_favourite: set) -> set:
     """
     Return products that are liked only by Sladkoejkin.
 
@@ -10,28 +10,39 @@ def different_favourites(set_favourites: set, friend_favourite: str) -> set:
         set: Set of products liked only by Sladkoejkin after 
              comparing with friend.
     """
-    return set_favourites.discard(friend_favourite)
+    return set_favourites.difference(friend_favourite)
 
 
-try:
-    str_favourites = input("Введите то, что нравится Сладкоежкину: ").strip()
-    set_favourites = set(str_favourites.split())
-    number_friends = int(input("Введите число друзей: "))
-
-    while number_friends < 0:
-        print("Введите корректное число друзей")
+def main():
+    """
+    Main function.
+    """
+    try:
+        str_favourites = input(
+            "Введите то, что нравится Сладкоежкину: ").strip()
+        set_favourites = set(str_favourites.split())
         number_friends = int(input("Введите число друзей: "))
 
-    for i in range(number_friends):
-        friend_favourite = input("Введите предпочтение для "
-                                 f"{i+1}-ого друга: ").strip()
+        while number_friends < 0:
+            print("Введите корректное число друзей")
+            number_friends = int(input("Введите число друзей: "))
 
-        set_favourites = different_favourites(set_favourites, friend_favourite)
+        for i in range(number_friends):
+            friend_favourite = input("Введите предпочтение для "
+                                     f"{i+1}-ого друга: ").strip()
+            friend_favourite = set(friend_favourite.split())
 
-        if not set_favourites:
-            break
+            set_favourites = different_favourites(
+                set_favourites, friend_favourite)
 
-    print(len(set_favourites))
+            if not set_favourites:
+                break
 
-except ValueError:
-    print("Ошибка ввода! Убедитесь, что введены корректные данные")
+        print(f"Количество различных препочтений: {len(set_favourites)}")
+
+    except ValueError:
+        print("Ошибка ввода! Убедитесь, что введены корректные данные")
+
+
+if __name__ == "__main__":
+    main()

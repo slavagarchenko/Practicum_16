@@ -18,19 +18,27 @@ def get_k_subsets(input_str: str, k: int) -> list:
     return list(combinations(unique_numbers, k))
 
 
-try:
-    input_str = input("Введите натуральные числа через пробел: ").strip()
+def main():
+    """
+    Main function.
+    """
+    try:
+        input_str = input("Введите натуральные числа через пробел: ").strip()
 
-    if not input_str:
-        print("Ошибка: ввод не может быть пустым!")
-    else:
-        k = int(input("Введите K (размер подмножеств): ").strip())
+        if not input_str:
+            print("Ошибка: ввод не может быть пустым!")
+        else:
+            k = int(input("Введите K (размер подмножеств): ").strip())
 
-        print("=" * 50)
-        print(get_k_subsets(input_str, k))
+            print("=" * 50)
+            print(get_k_subsets(input_str, k))
 
-except ValueError:
-    print("Ошибка: все элементы должны быть натуральными числами!")
+    except ValueError:
+        print("Ошибка: все элементы должны быть натуральными числами!")
 
-except Exception as e:
-    print(f"Произошла ошибка: {e}")
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+
+
+if __name__ == "__main__":
+    main()

@@ -12,13 +12,20 @@ def num_in_set(set_numbers: set, number: int) -> bool:
     return number in set_numbers
 
 
-try:
-    numbers_str = input("Введите числа через пробел: ")
-    set_numbers = set(map(int, numbers_str.split()))
-    number = int(input("Введите число для проверки: "))
+def main():
+    """
+    Main function.
+    """
+    try:
+        numbers_str = input("Введите числа через пробел: ")
+        set_numbers = set(map(int, numbers_str.split()))
+        number = int(input("Введите число для проверки: "))
 
-    print(num_in_set(set_numbers, number))
+        print(num_in_set(set_numbers, number))
+
+    except ValueError:
+        print("Ошибка ввода! Убедитесь, что введены корректные данные")
 
 
-except ValueError:
-    print("Ошибка ввода! Убедитесь, что введены корректные данные")
+if __name__ == "__main__":
+    main()
