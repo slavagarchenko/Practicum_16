@@ -10,7 +10,7 @@ def get_k_subsets(input_str: str, k: int) -> list:
         k (int): Size of subsets to generate.
 
     Returns:
-        list: List of tuples, where each tuple represents a K-element subset.
+        list: List of lists, where each tuple represents a K-element subset.
     """
     numbers = list(map(int, input_str.split()))
     unique_numbers = sorted(set(numbers))
