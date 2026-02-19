@@ -9,7 +9,7 @@ def get_all_subsets(input_str: str) -> list:
         input_str (str): String containing natural numbers separated by spaces.
 
     Returns:
-        list: List of tuples, where each tuple represents a subset.
+        list: List of lists, where each tuple represents a subset.
     """
     numbers = list(map(int, input_str.split()))
 
